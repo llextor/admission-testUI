@@ -7,8 +7,9 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=UTF-8', 'Accept': 'application/json'});
 @Injectable()
 export class AuthService {
+  apiURL: 'http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT';
   private url(url: string) {
-    return environment.apiURL + '/' + url;
+    return this.apiURL + '/' + url;
   }
   signIn(name: string, password: string ): Observable<User> {
     const user: User = {

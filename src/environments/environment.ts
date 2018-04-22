@@ -4,6 +4,5 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  apiURL: 'http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT',
   production: false
 };
