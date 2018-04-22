@@ -19,10 +19,10 @@ export class AuthService {
     return this.http.post<User>(this.url('users/'), JSON.stringify(user), {headers: headers}); // found By name and password
   }
 
-  signUP(userForm: FormGroup): Observable<User> {
+  signUp(userForm: FormGroup): Observable<User> {
     const Form = JSON.stringify(userForm.value);
     console.log(Form);
-    return this.http.post<User>(this.url('users/'), Form, {headers: headers});
+    return this.http.post<User>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/', Form, {headers: headers});
   }
   constructor(private http: HttpClient) { }
 

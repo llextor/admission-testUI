@@ -24,7 +24,7 @@ export class SignUpComponent implements OnInit {
   }
   signUp() {
     console.log('REGISTRATION');
-    return this.authService.signUP(this.form).subscribe(data => console.log(this.user = data));
+    return this.authService.signUp(this.form).subscribe(data => console.log(this.user = data));
   }
 
 
