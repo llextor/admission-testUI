@@ -1,9 +1,9 @@
 <div id="form">
-  <form  (ngSubmit)="signIn(name, password)">
+  <form  [formGroup]="form" (ngSubmit)="signUp()">
     <p>Login to the test system</p>
 
-    <div><input #name type="text"  required ></div>
-    <div><input #password type="password"  required></div>
+    <div><input #name type="text" formControlName="name" required ></div>
+    <div><input #password type="password"  formControlName="password" required></div>
     <button id="signin"  type="submit">Log in</button>
     <button id="signup" routerLink="/signup">Sign up</button>
   </form>

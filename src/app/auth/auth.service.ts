@@ -11,12 +11,8 @@ export class AuthService {
   private url(url: string) {
     return this.apiURL + '/' + url;
   }
-  signIn(name: string, password: string ): Observable<User> {
-    const user: User = {
-      name: name,
-      password: password
-    };
-    return this.http.post<User>(this.url('users/'), JSON.stringify(user), {headers: headers}); // found By name and password
+  signIn(name: string, password: string): Observable<User> {
+    return this.http.post<User>(this.url('user/'), name + '&' + password, {headers: headers}); // found By name and password
   }
 
   signUp(userForm: FormGroup): Observable<User> {

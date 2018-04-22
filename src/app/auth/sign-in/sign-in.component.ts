@@ -7,13 +7,19 @@ import {AuthService} from '../auth.service';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-  signIn(name: string, password: string) {
-    console.log('login' );
+  form: FormGroup;
+  signIn() {
+    return this.auth.signIn(this.form.get('name').value, this.form.get('password').value);
   }
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService,
+              private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.form = this.formBuilder.group({
+      name: '',
+      password: '',
+    });
   }
 
 }
