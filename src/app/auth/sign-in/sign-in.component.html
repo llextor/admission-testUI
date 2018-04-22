@@ -1,0 +1,12 @@
+<div id="form">
+  <form  (ngSubmit)="signIn(name, password)">
+    <p>Login to the test system</p>
+
+    <div><input #name type="text"  required ></div>
+    <div><input #password type="password"  required></div>
+    <button id="signin"  type="submit">Log in</button>
+    <button id="signup" routerLink="/signup">Sign up</button>
+  </form>
+
+
+</div>

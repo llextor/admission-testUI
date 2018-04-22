@@ -1,0 +1,15 @@
+<div id="wrapper">
+  <h2>Registration</h2>
+  <p>Компания Netcracker приглашает студентов 3-6 курсов пройти очное семестровое обучение по направлениям Enterprise Java Development, Business Analysis и System Engineering. Обучение проводится специалистами компании, состоит из теоретической и практической частей, включает выполнение проектов в небольшой команде.
+    Успешно закончившим программу предоставляется возможность присоединиться к команде Netcracker!</p>
+  <form [formGroup]="form" (ngSubmit)="signUp()">
+    <label >Name</label>
+    <input #userName type="text" placeholder="name"  formControlName="name" required>
+    <label >Password</label>
+    <input #password type="password" placeholder="password" formControlName="password" required/>
+    <label >E-mail</label>
+    <input #email type="text" placeholder="email" formControlName="email" />
+    <input type="submit" value="Sign Up">
+  </form>
+</div>
+
