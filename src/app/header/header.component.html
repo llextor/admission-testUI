@@ -1,8 +1,12 @@
 <div id="header">
   <ul id="menu">
 
-    <li><a id="about" routerLink="/about" routerLinkActive="active">About contest</a></li>
-    <li><a id="contacts" routerLink="/contacts" routerLinkActive="active">Contacts</a></li>
-    <li><a id="signin" routerLink="/signin" routerLinkActive="active">Sign In</a></li>
+    <li ><a id="about" routerLink="/about" routerLinkActive="active">About contest</a></li>
+    <li ><a id="contacts" routerLink="/contacts" routerLinkActive="active">Contacts</a></li>
+    <li *ngIf="authService.currentUser.role.type==='STUDENT'"><a id="test" routerLink="/pre-test" routerLinkActive="active">Testing</a></li>
+
+    <li *ngIf="authService.currentUser.role.type==='STUDENT'" (click)="authService.logOut()">
+      <a id="signout" routerLink="/signin" routerLinkActive="active"> Log Out</a></li>
+    <li *ngIf="authService.currentUser.role.type==='GUEST'"><a id="signin" routerLink="/signin" routerLinkActive="active">Sign In</a></li>
   </ul>
 </div>

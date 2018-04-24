@@ -3,12 +3,13 @@
 
 }
 #wrapper {
+  padding-bottom: 20px;
   width: 80%;
   background-color: #fafafa;
   margin: 0 auto;
   margin-top: 25px;
   border-radius: 5px;
-  height: 90vh;
+  height: auto;
   opacity: 0.95;
 
 }

@@ -29,6 +29,10 @@ a {
   margin-right: 10%;
 
 }
+#signout {
+  float: right;
+  margin-right: 10%;
+}
 #signin:hover {
   cursor: pointer;
   border-bottom: 1px solid #dc4955;
@@ -41,6 +45,11 @@ a {
   color: #dc4955;
 }
 #contacts:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #dc4955;
+  color: #dc4955;
+}
+#test:hover {
   cursor: pointer;
   border-bottom: 1px solid #dc4955;
   color: #dc4955;
