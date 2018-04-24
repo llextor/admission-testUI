@@ -4,12 +4,15 @@
     Успешно закончившим программу предоставляется возможность присоединиться к команде Netcracker!</p>
   <form [formGroup]="form" (ngSubmit)="signUp()">
     <label >Name</label>
+
     <input #userName type="text" placeholder="name"  formControlName="name" required>
     <label >Password</label>
+
     <input #password type="password" placeholder="password" formControlName="password" required/>
     <label >E-mail</label>
+
     <input #email type="text" placeholder="email" formControlName="email" />
-    <input type="submit" value="Sign Up">
+    <button type="submit" >Sign Up</button>
   </form>
 </div>
 

@@ -6,10 +6,10 @@
   width: 20%;
   height: auto;
   color: #fafafa;
-  left: 40%;
+  left: 38%;
   min-width: 300px;
   position: absolute;
-  top: 35%;
+  top: 30%;
 }
 p {
   padding-bottom: 10px;
@@ -33,20 +33,21 @@ input[type="text"] {
   font-size:18px ;
   background-repeat: no-repeat;
   background-position: left;
+  font-style: italic;
 }
 input[type="password"] {
   background-image: url("1214985-24.png");
   background-repeat: no-repeat;
   background-position: left;
-
+  letter-spacing: 1px;
 }
 #signup {
   background-color: #4e7aa1;
-  width: 55%;
+  width: 59%;
 }
 #signin {
   background-color: #dc4955;
-  width: 43%;
+  width: 39%;
 
 }
 button {
@@ -57,5 +58,8 @@ button {
   border-radius: 3px;
   margin-top: 15px;
 
+}
+app-alert {
 
 }
+

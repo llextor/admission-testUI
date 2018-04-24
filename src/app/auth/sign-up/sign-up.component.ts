@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {User} from '../../entities/user';
+import {Observable} from 'rxjs/Observable';
+import {error} from 'util';
+import {Router, RouterModule, Routes} from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,18 +16,35 @@ export class SignUpComponent implements OnInit {
   form: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private routes: Router
   ) { }
   ngOnInit() {
     this.form = this.formBuilder.group({
-      name: '',
-      password: '',
-      email: '',
+      name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6)
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6)
+      ]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.email
+      ]),
     });
   }
   signUp() {
     console.log('REGISTRATION');
-    return this.authService.signUp(this.form).subscribe(data => console.log(this.user = data));
+    return this.authService.signUp(this.form).subscribe(data => {
+      console.log();
+      this.routes.navigate(['/signin'],
+        {queryParams: {'name': this.form.get('name').value, 'password': this.form.get('password').value, 'successReg': true}});
+    }, () => {
+      console.log(error);
+    });
   }
 
 

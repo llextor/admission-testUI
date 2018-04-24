@@ -1,12 +1,11 @@
-<div id="form">
-  <form  [formGroup]="form" (ngSubmit)="signIn()">
-    <p>Login to the test system</p>
 
-    <div><input #name type="text" formControlName="name" required ></div>
-    <div><input #password type="password"  formControlName="password" required></div>
-    <button id="signin"  type="submit">Log in</button>
+<div id="form">
+  <form  [formGroup]="form">
+    <app-alert [goodRegistration]="message"></app-alert>
+    <p>Login to the test system</p>
+    <div><input [ngModel]="user.name" type="text" formControlName="name"  ></div>
+    <div><input [ngModel]="user.password" type="password" formControlName="password" ></div>
+    <button id="signin" (click)="signIn()"  >Log in</button>
     <button id="signup" routerLink="/signup">Sign up</button>
   </form>
-
-
 </div>

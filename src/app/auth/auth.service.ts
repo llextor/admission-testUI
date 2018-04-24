@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import {environment} from '../../environments/environment';
 import {User} from '../entities/user';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {ActivatedRoute, Routes, Router} from '@angular/router';
 const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=UTF-8', 'Accept': 'application/json'});
 @Injectable()
 export class AuthService {
@@ -11,8 +12,15 @@ export class AuthService {
   private url(url: string) {
     return this.apiURL + '/' + url;
   }
-  signIn(name: string, password: string): Observable<User> {
-    return this.http.post<User>(this.url('user/'), name + '&' + password, {headers: headers}); // found By name and password
+  signIn(name: string, password: string) {
+    return this.http.get<User>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/user/' + name + '&' + password + '/').
+    subscribe(
+      user => {
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      this.routes.navigate(['pre-test']);
+    }, () => {console.log('Error LOGIN');
+      this.routes.navigate(['/**']);
+      });
   }
 
   signUp(userForm: FormGroup): Observable<User> {
@@ -20,7 +28,8 @@ export class AuthService {
     console.log(Form);
     return this.http.post<User>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/', Form, {headers: headers});
   }
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private routes: Router) { }
 
 
 }

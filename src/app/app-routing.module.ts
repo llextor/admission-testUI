@@ -5,7 +5,7 @@ import {SignInComponent} from './auth/sign-in/sign-in.component';
 import {ContactsComponent} from './contacts/contacts.component';
 import {AboutComponent} from './about/about.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {WarningTestComponent} from './warning-test/warning-test.component';
+import {PreTestComponent} from './pre-test/pre-test.component';
 
 const routes: Routes = [
   {
@@ -13,11 +13,11 @@ const routes: Routes = [
     redirectTo: '/about',
     pathMatch: 'full'
   },
+  { path: 'pre-test', component: PreTestComponent},
   { path: 'signin', component: SignInComponent},
   { path: 'about', component: AboutComponent },
   { path: 'contacts', component: ContactsComponent, },
   { path: 'signup', component: SignUpComponent},
-  { path: 'test', component: WarningTestComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

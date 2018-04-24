@@ -10,10 +10,11 @@ import { AppRoutingModule } from './/app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { WarningTestComponent } from './warning-test/warning-test.component';
 import {AuthService} from './auth/auth.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { AlertComponent } from './auth/alert/alert.component';
+import { PreTestComponent } from './pre-test/pre-test.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {HttpClientModule} from '@angular/common/http';
     AboutComponent,
     ContactsComponent,
     PageNotFoundComponent,
-    WarningTestComponent
+    AlertComponent,
+    PreTestComponent
   ],
   imports: [
     BrowserModule,
