@@ -13,7 +13,8 @@ export class AuthService {
     return this.apiURL + '/' + url;
   }
   signIn(name: string, password: string) {
-    return this.http.get<User>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/user/' + name + '&' + password + '/').
+    return this.http.get<User>
+    ('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/user?name=' + name + '&password=' + password).
     subscribe(
       user => {
       localStorage.setItem('currentUser', JSON.stringify(user));
