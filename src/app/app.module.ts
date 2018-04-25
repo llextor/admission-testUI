@@ -15,6 +15,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AlertComponent } from './auth/alert/alert.component';
 import { PreTestComponent } from './pre-test/pre-test.component';
+import { CategoryComponent } from './category/category.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PreTestComponent } from './pre-test/pre-test.component';
     ContactsComponent,
     PageNotFoundComponent,
     AlertComponent,
-    PreTestComponent
+    PreTestComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

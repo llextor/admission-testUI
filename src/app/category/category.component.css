@@ -1,0 +1,23 @@
+* {
+  font-family: 'HelveticaNeueCyr', sans-serif;
+
+}
+#wrapper {
+  width: 80%;
+  background-color: #fafafa;
+  margin: 0 auto;
+  margin-top: 25px;
+  border-radius: 5px;
+  height: 90vh;
+  opacity: 0.9;
+
+}
+h2 {
+  padding: 10px;
+}
+p {
+  line-height: 25px;
+  text-indent: 20px;
+  padding: 0 15px;
+  text-align: justify;
+}

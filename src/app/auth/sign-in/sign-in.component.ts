@@ -42,7 +42,7 @@ export class SignInComponent implements OnInit {
   }
 
   signIn() {
-    console.log(' TRY LOGIN');
+    console.log('TRY LOGIN');
     return this.auth.signIn(this.form.get('name').value, this.form.get('password').value);
   }
 }

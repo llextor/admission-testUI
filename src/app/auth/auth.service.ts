@@ -9,11 +9,15 @@ import {Role} from '../entities/role';
 const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=UTF-8', 'Accept': 'application/json'});
 @Injectable()
 export class AuthService {
-  role: Role = {
-    type: 'GUEST'
-  };
   currentUser: User = {
-    role: this.role
+    id: null,
+    name: '',
+    password: '',
+    email: '',
+    role: {
+      id: null,
+      name: ''
+    }
   };
   apiURL: 'http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT';
   private url(url: string) {
@@ -24,22 +28,33 @@ export class AuthService {
     ('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/user?name=' + name + '&password=' + password).subscribe(
       user => {
         localStorage.setItem('currentUser', JSON.stringify(user));
+        const str = JSON.stringify(user);
+        const strU = str.substr(1, str.length - 2);
+        this.currentUser = JSON.parse(strU);
         this.routes.navigate(['pre-test']);
-        this.currentUser.role.type = 'STUDENT';
       }, () => {
         console.log('Error LOGIN');
         this.routes.navigate(['/**']);
       });
   }
   signUp(userForm: FormGroup): Observable<User> {
-    const Form = JSON.stringify(userForm.value);
-    console.log(Form);
-    return this.http.post<User>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/', Form, {headers: headers});
+    const newUser: User = {
+      id: null,
+      name: userForm.get('name').value,
+      password: userForm.get('password').value,
+      email: userForm.get('email').value,
+      role: {
+        id: 2,
+        name: 'user'
+      }
+    };
+    console.log(newUser);
+    return this.http.post<User>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/', newUser, {headers: headers});
   }
   logOut() {
     localStorage.removeItem('currentUser');
     this.routes.navigate(['signin']);
-    this.currentUser.role.type = 'GUEST';
+    this.currentUser.role.name = null;
   }
   constructor(private http: HttpClient,
               private routes: Router) { }

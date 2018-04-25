@@ -54,6 +54,11 @@ a {
   border-bottom: 1px solid #dc4955;
   color: #dc4955;
 }
+#category:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #dc4955;
+  color: #dc4955;
+}
 a.active {
   border-bottom: 1px solid #4e7aa1;
   color: #4e7aa1;

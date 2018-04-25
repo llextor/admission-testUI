@@ -6,6 +6,7 @@ import {ContactsComponent} from './contacts/contacts.component';
 import {AboutComponent} from './about/about.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {PreTestComponent} from './pre-test/pre-test.component';
+import {CategoryComponent} from './category/category.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'pre-test', component: PreTestComponent},
+  { path: 'categories', component: CategoryComponent},
   { path: 'signin', component: SignInComponent},
   { path: 'about', component: AboutComponent },
   { path: 'contacts', component: ContactsComponent, },
