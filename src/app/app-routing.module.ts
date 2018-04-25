@@ -7,6 +7,7 @@ import {AboutComponent} from './about/about.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {PreTestComponent} from './pre-test/pre-test.component';
 import {CategoryComponent} from './category/category.component';
+import {QuestionComponent} from './question/question.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
   },
   { path: 'pre-test', component: PreTestComponent},
   { path: 'categories', component: CategoryComponent},
+  { path: 'questions', component: QuestionComponent},
   { path: 'signin', component: SignInComponent},
   { path: 'about', component: AboutComponent },
   { path: 'contacts', component: ContactsComponent, },

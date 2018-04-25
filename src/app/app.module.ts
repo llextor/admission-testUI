@@ -16,6 +16,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AlertComponent } from './auth/alert/alert.component';
 import { PreTestComponent } from './pre-test/pre-test.component';
 import { CategoryComponent } from './category/category.component';
+import { QuestionComponent } from './question/question.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CategoryComponent } from './category/category.component';
     PageNotFoundComponent,
     AlertComponent,
     PreTestComponent,
-    CategoryComponent
+    CategoryComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,

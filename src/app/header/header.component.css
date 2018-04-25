@@ -21,8 +21,9 @@ a {
   font-weight: bolder;
   border-bottom: 1px solid #fafafa;
   outline: 0;
-
-
+}
+#nameOfUser {
+  font-weight: normal;
 }
 #signin {
   float: right;

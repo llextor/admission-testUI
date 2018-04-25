@@ -1,12 +1,13 @@
 <div id="header">
   <ul id="menu">
 
-    <li ><a id="about" routerLink="/about" routerLinkActive="active">About contest</a></li>
-    <li ><a id="contacts" routerLink="/contacts" routerLinkActive="active">Contacts</a></li>
+    <li *ngIf="authService.currentUser.role.name===null || authService.currentUser.role.name==='user'"><a id="about" routerLink="/about" routerLinkActive="active">About contest</a></li>
+    <li *ngIf="authService.currentUser.role.name===null || authService.currentUser.role.name==='user'"><a id="contacts" routerLink="/contacts" routerLinkActive="active">Contacts</a></li>
     <li *ngIf="authService.currentUser.role.name==='user'"><a id="test" routerLink="/pre-test" routerLinkActive="active">Testing</a></li>
     <li *ngIf="authService.currentUser.role.name==='admin'"><a id="category" routerLink="/categories" routerLinkActive="active">Categories</a></li>
+    <li *ngIf="authService.currentUser.role.name==='admin'"><a id="question" routerLink="/questions" routerLinkActive="active">Questions</a></li>
     <li *ngIf="authService.currentUser.role.name!==null" (click)="authService.logOut()">
-     <a id="signout" routerLink="/signin" routerLinkActive="active">Log Out</a></li>
+     <a id="signout" routerLink="/signin" routerLinkActive="active"><span >Log out : {{authService.currentUser.name}}</span> </a></li>
     <li *ngIf="authService.currentUser.role.name===null"><a id="signin" routerLink="/signin" routerLinkActive="active">Sign In</a></li>
   </ul>
 </div>
