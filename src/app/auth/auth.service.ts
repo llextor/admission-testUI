@@ -16,7 +16,7 @@ export class AuthService {
     email: '',
     role: {
       id: null,
-      name: ''
+      name: null
     }
   };
   apiURL: 'http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT';
