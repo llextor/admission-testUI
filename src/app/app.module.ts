@@ -17,6 +17,10 @@ import { AlertComponent } from './auth/alert/alert.component';
 import { PreTestComponent } from './pre-test/pre-test.component';
 import { CategoryComponent } from './category/category.component';
 import { QuestionComponent } from './question/question.component';
+import {QuestionsService} from './question/questions.service';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { EditQuestionComponent } from './edit-question/edit-question.component';
+import {CategoryService} from './category/category.service';
 
 
 @NgModule({
@@ -31,7 +35,9 @@ import { QuestionComponent } from './question/question.component';
     AlertComponent,
     PreTestComponent,
     CategoryComponent,
-    QuestionComponent
+    QuestionComponent,
+    EditCategoryComponent,
+    EditQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,9 @@ import { QuestionComponent } from './question/question.component';
     ReactiveFormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    QuestionsService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

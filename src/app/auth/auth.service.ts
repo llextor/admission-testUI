@@ -7,6 +7,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Routes, Router} from '@angular/router';
 import {Role} from '../entities/role';
 const headers = new HttpHeaders({ 'Content-Type': 'application/json; charset=UTF-8', 'Accept': 'application/json'});
+
 @Injectable()
 export class AuthService {
   currentUser: User = {
@@ -24,20 +25,28 @@ export class AuthService {
     return this.apiURL + '/' + url;
   }
   signIn(name: string, password: string) {
-    return this.http.get<User>
-    ('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/user?name=' + name + '&password=' + password).subscribe(
-      user => {
+     this.http.get('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/user?name=' + name + '&password=' + password)
+      .subscribe(user => {
+        console.log('SIGNIN OK');
         localStorage.setItem('currentUser', JSON.stringify(user));
         const str = JSON.stringify(user);
-        const strU = str.substr(1, str.length - 2);
-        this.currentUser = JSON.parse(strU);
-        this.routes.navigate(['pre-test']);
-      }, () => {
-        console.log('Error LOGIN');
-        this.routes.navigate(['/**']);
+        const jsonString = str.substr(1, str.length - 2);
+        this.currentUser = JSON.parse(jsonString);
+        // навигация в зависимости от роли, полученной с бекенда
+        if (this.currentUser.role.name === 'user') {
+          this.routes.navigate(['pre-test']);
+        } else {
+          this.routes.navigate(['categories']);
+        }
+      }, (errors) => {
+        console.log('Error LOGIN' + errors);
+        // навигация в случае ошибки
+        this.routes.navigate(['signin'],
+          {queryParams: {'badLogin': true}});
       });
   }
-  signUp(userForm: FormGroup): Observable<User> {
+  signUp(userForm: FormGroup) {
+    // берем из всей формы ТОЛЬКО те значения, которые нужны для отправки
     const newUser: User = {
       id: null,
       name: userForm.get('name').value,
@@ -48,8 +57,14 @@ export class AuthService {
         name: 'user'
       }
     };
-    console.log(newUser);
-    return this.http.post<User>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/', newUser, {headers: headers});
+    this.http.post('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/users/', newUser, {headers: headers})
+      .subscribe(() => {
+        console.log('Success Registration');
+      this.routes.navigate(['/signin'],
+        {queryParams: {'name': userForm.get('name').value, 'password': userForm.get('password').value, 'goodRegistration': true}});
+    }, errors => {
+      console.log('Bad registration ' + errors);
+    });
   }
   logOut() {
     localStorage.removeItem('currentUser');
@@ -59,3 +74,4 @@ export class AuthService {
   constructor(private http: HttpClient,
               private routes: Router) { }
 }
+

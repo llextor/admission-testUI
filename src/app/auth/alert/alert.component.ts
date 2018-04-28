@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class AlertComponent implements OnInit {
 
   @Input() goodRegistration: boolean;
+  @Input() badLogin: boolean;
   constructor() { }
 
   ngOnInit() {

@@ -8,6 +8,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {PreTestComponent} from './pre-test/pre-test.component';
 import {CategoryComponent} from './category/category.component';
 import {QuestionComponent} from './question/question.component';
+import {EditQuestionComponent} from './edit-question/edit-question.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
     redirectTo: '/about',
     pathMatch: 'full'
   },
+  { path: 'editQ', component: EditQuestionComponent},
   { path: 'pre-test', component: PreTestComponent},
   { path: 'categories', component: CategoryComponent},
   { path: 'questions', component: QuestionComponent},

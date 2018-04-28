@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
-import {SignUpComponent} from '../sign-up/sign-up.component';
 import {User} from '../../entities/user';
 import {Subscription} from 'rxjs/Subscription';
 import {Router, RouterModule, Routes, ActivatedRoute} from '@angular/router';
@@ -16,8 +15,9 @@ export class SignInComponent implements OnInit {
     name: '',
     password: ''
   };
-  message: boolean;
-  private subscr: Subscription;
+  goodRegistration: boolean;
+  badLogin: boolean;
+  private subscriprion: Subscription;
 
   constructor(private auth: AuthService,
               private formBuilder: FormBuilder,
@@ -34,15 +34,15 @@ export class SignInComponent implements OnInit {
         Validators.required
       ]),
     });
-    this.subscr = this.activeRoute.queryParams.subscribe(params => {
+    this.subscriprion = this.activeRoute.queryParams.subscribe(params => {
       this.user.name = params['name'];
       this.user.password = params['password'];
-      this.message = params['successReg'];
+      this.goodRegistration = params['goodRegistration'];
+      this.badLogin = params['badLogin'];
     });
   }
 
   signIn() {
-    console.log('TRY LOGIN');
-    return this.auth.signIn(this.form.get('name').value, this.form.get('password').value);
+    this.auth.signIn(this.form.get('name').value, this.form.get('password').value);
   }
 }

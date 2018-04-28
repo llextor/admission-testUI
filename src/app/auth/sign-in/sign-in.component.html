@@ -1,7 +1,7 @@
 
 <div id="form">
   <form  [formGroup]="form">
-    <app-alert [goodRegistration]="message"></app-alert>
+    <app-alert [goodRegistration]="goodRegistration" [badLogin]="badLogin" ></app-alert>
     <p>Login to the test system</p>
     <div><input [ngModel]="user.name" type="text" formControlName="name"  ></div>
     <div><input [ngModel]="user.password" type="password" formControlName="password" ></div>

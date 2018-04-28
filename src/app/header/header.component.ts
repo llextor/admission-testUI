@@ -8,7 +8,6 @@ import {AuthService} from '../auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  access = 'GUEST';
   constructor(public authService: AuthService) { }
 
   ngOnInit() {

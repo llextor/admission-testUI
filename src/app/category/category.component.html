@@ -1,5 +1,14 @@
-<div id="wrapper">
+<div id="wrapper" >
   <h2>Categories</h2>
-  <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
-
+  <ul>
+    <li *ngFor="let category of categories"> {{category.name}}
+    <button (click)="deleteById(category.id)" >Remove {{category.name}}</button>
+    </li>
+    <li *ngIf="!clickNewCategory"><button (click)="enterCategory()">Add Category</button></li>
+  </ul>
+  <div *ngIf="clickNewCategory">
+    <input type="text" [(ngModel)]="nameOfCategory">
+    <button (click)="addCategory(nameOfCategory)" >Add New Category</button>
+    <button (click)="clickNewCategory=false">Cancel</button>
+  </div>
 </div>
