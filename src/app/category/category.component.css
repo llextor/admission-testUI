@@ -8,20 +8,56 @@
   margin: 0 auto;
   margin-top: 25px;
   border-radius: 5px;
-  height: 90vh;
-  opacity: 0.9;
+  height: auto;
+  opacity: 1;
+  padding-bottom: 10px;
 
 }
 h2 {
   padding: 10px;
 }
-p {
-  line-height: 25px;
-  text-indent: 20px;
-  padding: 0 15px;
-  text-align: justify;
-}
+
 li {
-  margin: 20px;
+  margin-bottom: 20px;
   list-style: none;
+  font-size: 18px;
+
+}
+a {
+  display: block;
+  background: url("1493279-20.png") no-repeat;
+  cursor:pointer;
+  width: 20px;
+  height: 20px;
+  border: none;
+  float:left;
+  margin-right: 10px;
+
+}
+#addNewCategoryButton {
+  display: block;
+  width:10%;
+  height: 40px;
+  background-color: #dc4955;
+  border: 0;
+  border-radius: 2px;
+  color: #fafafa;
+}
+
+#newCategoryField {
+  margin-left: 40px;
+}
+#newCategoryField input {
+  height: 24px; /*минус padding, border*/
+  float: left;
+  margin-right: 10px;
+}
+.newCategoryFieldButton {
+  width:10%;
+  height: 30px;
+  background-color: #dc4955;
+  border: 0;
+  border-radius: 2px;
+  color: #fafafa;
+
 }

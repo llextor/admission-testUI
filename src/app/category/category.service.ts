@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Category} from '../entities/Category';
+import {Category} from '../entities/category';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs/Observable';
 import {Router, Routes} from '@angular/router';

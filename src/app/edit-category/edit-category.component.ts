@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Category} from '../entities/Category';
+import {Category} from '../entities/category';
 
 @Component({
   selector: 'app-edit-category',

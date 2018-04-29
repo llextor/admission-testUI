@@ -1,14 +1,14 @@
 <div id="wrapper" >
   <h2>Categories</h2>
   <ul>
-    <li *ngFor="let category of categories"> {{category.name}}
-    <button (click)="deleteById(category.id)" >Remove {{category.name}}</button>
+    <li *ngFor="let category of categories">{{category.name}}
+      <a  (click)="deleteById(category.id)"  title="Remove category"></a>
     </li>
-    <li *ngIf="!clickNewCategory"><button (click)="enterCategory()">Add Category</button></li>
+    <li *ngIf="!clickNewCategory"><button id="addNewCategoryButton" (click)="enterCategory()">Add Category</button></li>
   </ul>
-  <div *ngIf="clickNewCategory">
-    <input type="text" [(ngModel)]="nameOfCategory">
-    <button (click)="addCategory(nameOfCategory)" >Add New Category</button>
-    <button (click)="clickNewCategory=false">Cancel</button>
+  <div *ngIf="clickNewCategory" id="newCategoryField">
+    <input type="text" [(ngModel)]="nameOfCategory"  placeholder="name of category">
+    <button class="newCategoryFieldButton" (click)="addCategory(nameOfCategory)" >Add new</button>
+    <button class="newCategoryFieldButton" (click)="clickNewCategory=false">Cancel</button>
   </div>
 </div>

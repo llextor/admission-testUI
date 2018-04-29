@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoryService} from './category.service';
-import {Category} from '../entities/Category';
+import {Category} from '../entities/category';
 import {Router} from '@angular/router';
 
 @Component({
@@ -13,11 +13,7 @@ export class CategoryComponent implements OnInit {
   categories: Category[];
   nameOfCategory: string;
   clickNewCategory: boolean;
-  constructor(private categoryService: CategoryService,
-              private routes: Router) {
-
-
-  }
+  constructor(private categoryService: CategoryService) {}
   enterCategory() {
     this.clickNewCategory = true;
   }
