@@ -9,15 +9,35 @@
   margin-top: 25px;
   border-radius: 5px;
   height: 100%;
-  opacity: 0.9;
 
 }
 h2 {
   padding: 10px;
 }
+a {
+  text-decoration: none;
+}
+ol {
+  padding: 0;
+}
+li {
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 18px;
+  margin-left: 40px;
+  list-style-position: inside;
+}
+select {
+  font-size: 18px;
+  margin-left: 40px;
+  border: none;
+  height: 30px;
+  width: 20%;
+  border: 1px solid #304658;
+
+}
 p {
-  line-height: 25px;
-  text-indent: 20px;
-  padding: 0 15px;
-  text-align: justify;
+  font-size: 18px;
+  margin-left: 40px;
+  margin-bottom: 7px;
 }

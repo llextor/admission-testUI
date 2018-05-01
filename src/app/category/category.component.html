@@ -7,7 +7,7 @@
     <li *ngIf="!clickNewCategory"><button id="addNewCategoryButton" (click)="enterCategory()">Add Category</button></li>
   </ul>
   <div *ngIf="clickNewCategory" id="newCategoryField">
-    <input type="text" [(ngModel)]="nameOfCategory"  placeholder="name of category">
+    <input type="text" [(ngModel)]="nameOfCategory"  placeholder=" name of category">
     <button class="newCategoryFieldButton" (click)="addCategory(nameOfCategory)" >Add new</button>
     <button class="newCategoryFieldButton" (click)="clickNewCategory=false">Cancel</button>
   </div>

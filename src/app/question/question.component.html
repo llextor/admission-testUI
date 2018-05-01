@@ -1,8 +1,12 @@
 <div id="wrapper">
   <h2>Questions</h2>
-  <ul>
+  <p>Choose a category: </p>
+  <select [(ngModel)]="selectedCategory" (change)="showQuestions(selectedCategory.id)">
 
-  </ul>
-
+    <option *ngFor="let category of categories"  [ngValue]="category">{{category.name}}</option>
+  </select>
+  <ol>
+    <li *ngFor="let question of questions"><a routerLink="/editQuestion">{{question.questionStr}}</a></li>
+  </ol>
 </div>
-// вывести вопросы и категории в ссылке с функцией по клику
+

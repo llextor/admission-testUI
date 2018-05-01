@@ -16,7 +16,7 @@ const routes: Routes = [
     redirectTo: '/about',
     pathMatch: 'full'
   },
-  { path: 'editQ', component: EditQuestionComponent},
+  { path: 'editQuestion', component: EditQuestionComponent},
   { path: 'pre-test', component: PreTestComponent},
   { path: 'categories', component: CategoryComponent},
   { path: 'questions', component: QuestionComponent},

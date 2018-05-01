@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {QuestionsService} from './questions.service';
 import {Question} from '../entities/question';
 import {Router} from '@angular/router';
+import {Category} from '../entities/category';
+import {CategoryService} from '../category/category.service';
 
 @Component({
   selector: 'app-question',
@@ -10,18 +12,26 @@ import {Router} from '@angular/router';
 })
 export class QuestionComponent implements OnInit {
 
+  categories: Category[];
   questions: Question[];
-  selectedQ: Question;
+  selectedCategory: Category;
   constructor(private questionsService: QuestionsService,
+              private categoryService: CategoryService,
               private routes: Router) { }
-
-  editQ () {
-    console.log('OK');
-    this.routes.navigate(['editQ'],
-      {queryParams: {'name': this.selectedQ}});
+  showQuestions(id: number) {
+  this.questionsService.getAllQuestions(id)
+      .subscribe(data => {
+        this.questions = data as Question[];
+        console.log(this.questions);
+      });
   }
   ngOnInit() {
-   /*this.questions = this.questionsService.getAllQuestions();*/
+    this.categoryService.getCategories()
+      .subscribe(data => {
+        this.categories = data as Category[];
+        this.selectedCategory = this.categories[0];
+        this.showQuestions(this.selectedCategory.id);
+      }   );
   }
 
 }
