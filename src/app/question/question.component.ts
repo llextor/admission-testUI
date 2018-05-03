@@ -11,7 +11,6 @@ import {CategoryService} from '../category/category.service';
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit {
-
   categories: Category[];
   questions: Question[];
   selectedCategory: Category;
@@ -24,6 +23,11 @@ export class QuestionComponent implements OnInit {
         this.questions = data as Question[];
         console.log(this.questions);
       });
+  }
+  deleteById(id: number) {
+    this.questionsService.removeQuestion(id);
+    this.ngOnInit();
+
   }
   ngOnInit() {
     this.categoryService.getCategories()

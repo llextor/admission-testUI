@@ -21,6 +21,7 @@ import {QuestionsService} from './question/questions.service';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
 import {CategoryService} from './category/category.service';
+import {EditQuestionService} from './edit-question/edit-question.service';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {CategoryService} from './category/category.service';
   providers: [
     AuthService,
     QuestionsService,
-    CategoryService
+    CategoryService,
+    EditQuestionService
   ],
   bootstrap: [AppComponent]
 })

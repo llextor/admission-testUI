@@ -34,10 +34,35 @@ select {
   height: 30px;
   width: 20%;
   border: 1px solid #304658;
-
 }
 p {
   font-size: 18px;
   margin-left: 40px;
   margin-bottom: 7px;
+}
+button {
+  float: right;
+  height: 30px;
+  width: 10%;
+  margin-right: 40px;
+  background-color: #dc4955;
+  border: 0;
+  border-radius: 2px;
+  color: #fafafa;
+}
+a {
+
+  background: url("../category/1493279-20.png") no-repeat;
+  cursor:pointer;
+  border: none;
+  margin-right: 10px;
+  display: block;
+
+
+  width: 20px;
+  height: 20px;
+
+  float:left;
+
+
 }

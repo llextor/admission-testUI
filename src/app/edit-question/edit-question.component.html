@@ -1,3 +1,33 @@
-<p>
-  edit-question works!
-</p>
+<div id="wrapper">
+  <h2>Add question</h2>
+  <form [formGroup]="form" (ngSubmit)="addNewQuestion()">
+    <div class="field">
+      <label >Category
+  <select [(ngModel)]="selectedCategory" [ngModelOptions]="{standalone: true}" >
+    <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+  </select></label>
+    </div>
+    <div class="field">
+    <label >Question
+      <input id="questionStr" type="text" placeholder="full question"  formControlName="questionStr" required ></label>
+    </div>
+      <div class="field">
+    <label >Correct answer
+    <input #password type="text" placeholder="correct"  formControlName="trueAnswer" required/></label>
+      </div>
+    <div class="field">
+    <label >Possible answer
+    <input #password type="text" placeholder="wrong" formControlName="wrongAnswer1" required/></label>
+    </div>
+    <div class="field">
+    <label >Possible answer
+    <input #password type="text" placeholder="wrong" formControlName="wrongAnswer2" required/></label>
+    </div>
+    <div class="field">
+    <label >Possible answer
+    <input #password type="text" placeholder="wrong" formControlName="wrongAnswer3" required/></label>
+    </div>
+
+    <button type="submit" >Add new question</button>
+  </form>
+</div>
