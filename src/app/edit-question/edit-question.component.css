@@ -25,7 +25,7 @@ select {
   height: 30px;
   width: 20%;
   border: 1px solid #304658;
-  margin-right: 60%;
+  margin-right: calc(60% + 2px);
 }
 
 form label {
@@ -39,12 +39,11 @@ input {
   height: 30px;
   border: 1px solid #304658;
   font-size: 18px;
-
 }
 button {
   display: block;
   font-size: 14px;
-  width:15%;
+  width:20%;
   height: 40px;
   background-color: #dc4955;
   border: 0;

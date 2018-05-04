@@ -22,6 +22,7 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
 import {CategoryService} from './category/category.service';
 import {EditQuestionService} from './edit-question/edit-question.service';
+import { PropitiesComponent } from './propities/propities.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {EditQuestionService} from './edit-question/edit-question.service';
     CategoryComponent,
     QuestionComponent,
     EditCategoryComponent,
-    EditQuestionComponent
+    EditQuestionComponent,
+    PropitiesComponent
   ],
   imports: [
     BrowserModule,

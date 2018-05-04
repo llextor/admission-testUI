@@ -25,7 +25,9 @@ export class QuestionComponent implements OnInit {
       });
   }
   deleteById(id: number) {
-    this.questionsService.removeQuestion(id);
+    if (confirm('Are you sure?')) {
+      this.questionsService.removeQuestion(id);
+    }
     this.ngOnInit();
 
   }

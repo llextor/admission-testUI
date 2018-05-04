@@ -4,7 +4,6 @@
   <div>
     <button routerLink="/editQuestion">Add question</button>
   <select [(ngModel)]="selectedCategory" (change)="showQuestions(selectedCategory.id)">
-
     <option *ngFor="let category of categories"  [ngValue]="category">{{category.name}}</option>
   </select>
 </div>
