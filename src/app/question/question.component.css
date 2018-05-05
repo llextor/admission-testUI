@@ -2,6 +2,7 @@
   font-family: 'HelveticaNeueCyr', sans-serif;
 
 }
+
 #wrapper {
   width: 80%;
   background-color: #fafafa;
@@ -11,15 +12,19 @@
   height: 100%;
 
 }
+
 h2 {
   padding: 10px;
 }
+
 a {
   text-decoration: none;
 }
+
 ol {
   padding: 0;
 }
+
 li {
   text-decoration: none;
   margin-bottom: 20px;
@@ -27,6 +32,7 @@ li {
   margin-left: 40px;
   list-style-position: inside;
 }
+
 select {
   font-size: 18px;
   margin-left: 40px;
@@ -35,11 +41,13 @@ select {
   width: 20%;
   border: 1px solid #304658;
 }
+
 p {
   font-size: 18px;
   margin-left: 40px;
   margin-bottom: 7px;
 }
+
 button {
   float: right;
   height: 30px;
@@ -50,19 +58,18 @@ button {
   border-radius: 2px;
   color: #fafafa;
 }
+
 a {
 
   background: url("../category/1493279-20.png") no-repeat;
-  cursor:pointer;
+  cursor: pointer;
   border: none;
   margin-right: 10px;
   display: block;
 
-
   width: 20px;
   height: 20px;
 
-  float:left;
-
+  float: left;
 
 }

@@ -3,12 +3,13 @@
   <p>Choose a category: </p>
   <div>
     <button routerLink="/editQuestion">Add question</button>
-  <select [(ngModel)]="selectedCategory" (change)="showQuestions(selectedCategory.id)">
-    <option *ngFor="let category of categories"  [ngValue]="category">{{category.name}}</option>
-  </select>
-</div>
+    <select [(ngModel)]="selectedCategory" (change)="showQuestions(selectedCategory.id)">
+      <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+    </select>
+  </div>
   <ol>
-    <li *ngFor="let question of questions"><a  (click)="deleteById(question.id)"  title="Remove category"></a>{{question.questionStr}}</li>
+    <li *ngFor="let question of questions"><a (click)="deleteById(question.id)" title="Remove category"></a>{{question.questionStr}}
+    </li>
   </ol>
 </div>
 
