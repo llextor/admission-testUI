@@ -38,8 +38,8 @@ export class AuthService {
         } else {
           this.routes.navigate(['categories']);
         }
-      }, (errors) => {
-        console.log('Error LOGIN' + errors);
+      }, () => {
+        console.log('Error LOGIN');
         // навигация в случае ошибки
         this.routes.navigate(['signin'],
           {queryParams: {'badLogin': true}});
@@ -62,8 +62,8 @@ export class AuthService {
         console.log('Success Registration');
       this.routes.navigate(['/signin'],
         {queryParams: {'name': userForm.get('name').value, 'password': userForm.get('password').value, 'goodRegistration': true}});
-    }, errors => {
-      console.log('Bad registration ' + errors);
+    }, () => {
+      console.log('Bad registration ');
     });
   }
   logOut() {

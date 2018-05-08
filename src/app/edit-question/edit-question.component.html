@@ -3,7 +3,7 @@
   <form [formGroup]="form" (ngSubmit)="addNewQuestion()">
     <div class="field">
       <label >Category
-  <select [(ngModel)]="selectedCategory" [ngModelOptions]="{standalone: true}" >
+  <select  [(ngModel)]="selectedCategory" [ngModelOptions]="{standalone: true}" >
     <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
   </select></label>
     </div>

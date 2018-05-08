@@ -18,11 +18,12 @@ import { PreTestComponent } from './pre-test/pre-test.component';
 import { CategoryComponent } from './category/category.component';
 import { QuestionComponent } from './question/question.component';
 import {QuestionsService} from './question/questions.service';
-import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
 import {CategoryService} from './category/category.service';
 import {EditQuestionService} from './edit-question/edit-question.service';
 import { PropitiesComponent } from './propities/propities.component';
+import { ChangeQuestionComponent } from './change-question/change-question.component';
+import {ChangeQuestionService} from './change-question/change-question.service';
 
 
 @NgModule({
@@ -38,9 +39,9 @@ import { PropitiesComponent } from './propities/propities.component';
     PreTestComponent,
     CategoryComponent,
     QuestionComponent,
-    EditCategoryComponent,
     EditQuestionComponent,
-    PropitiesComponent
+    PropitiesComponent,
+    ChangeQuestionComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +55,8 @@ import { PropitiesComponent } from './propities/propities.component';
     AuthService,
     QuestionsService,
     CategoryService,
-    EditQuestionService
+    EditQuestionService,
+    ChangeQuestionService
   ],
   bootstrap: [AppComponent]
 })

@@ -26,6 +26,9 @@ export class QuestionsService {
       }
     );
   }*/
+  getQuestion(id: number): Observable<Question> {
+    return this.http.get<Question>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/question/question/' + id + '/');
+}
   constructor(private http: HttpClient) {
   }
 

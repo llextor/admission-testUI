@@ -9,6 +9,7 @@ import {PreTestComponent} from './pre-test/pre-test.component';
 import {CategoryComponent} from './category/category.component';
 import {QuestionComponent} from './question/question.component';
 import {EditQuestionComponent} from './edit-question/edit-question.component';
+import {ChangeQuestionComponent} from './change-question/change-question.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
     redirectTo: '/about',
     pathMatch: 'full'
   },
+  { path: 'changeQuestion/:id', component: ChangeQuestionComponent},
   { path: 'editQuestion', component: EditQuestionComponent},
   { path: 'pre-test', component: PreTestComponent},
   { path: 'categories', component: CategoryComponent},

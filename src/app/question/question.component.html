@@ -8,7 +8,7 @@
     </select>
   </div>
   <ol>
-    <li *ngFor="let question of questions"><a (click)="deleteById(question.id)" title="Remove category"></a>{{question.questionStr}}
+    <li *ngFor="let question of questions"><a id="deletePic" (click)="deleteById(question.id)" title="Remove category"></a> <a routerLink="/changeQuestion/{{question.id}}">{{question.questionStr}}</a>
     </li>
   </ol>
 </div>

@@ -1,0 +1,36 @@
+<div id="wrapper">
+  <h2>Change question</h2>
+  <form [formGroup]="form" (ngSubmit)="updateQuestion()">
+    <div class="field">
+      <label>Category
+        <select [(ngModel)]="selectedCategory" [ngModelOptions]="{standalone: true}">
+          <option *ngFor="let category of categories " [ngValue]="category.id">{{category.name}}</option>
+        </select></label>
+    </div>
+    <div class="field">
+      <label>Question
+        <input type="text" formControlName="questionStr" [(ngModel)]="question.questionStr" required></label>
+    </div>
+    <div class="field">
+      <label>Correct answer
+        <input type="text" placeholder="correct" formControlName="trueAnswer" [(ngModel)]="answers[0].answerStr"
+               required/></label>
+    </div>
+    <div class="field">
+      <label>Possible answer
+        <input type="text" placeholder="wrong" formControlName="wrongAnswer1" [(ngModel)]="answers[1].answerStr"
+               required/></label>
+    </div>
+    <div class="field">
+      <label>Possible answer
+        <input type="text" placeholder="wrong" formControlName="wrongAnswer2" [(ngModel)]="answers[2].answerStr"
+               required/></label>
+    </div>
+    <div class="field">
+      <label>Possible answer
+        <input type="text" placeholder="wrong" formControlName="wrongAnswer3" [(ngModel)]="answers[3].answerStr"
+               required/></label>
+    </div>
+    <button type="submit">Update question</button>
+  </form>
+</div>
