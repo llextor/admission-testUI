@@ -8,6 +8,9 @@ import {Answer} from '../entities/answer';
 
 @Injectable()
 export class QuestionsService {
+  constructor(private http: HttpClient) {
+  }
+
   getAllQuestions(id: number): Observable<Question[]> {
     return this.http.get<Question[]>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/question/category/' + id);
   }
@@ -28,8 +31,5 @@ export class QuestionsService {
   }*/
   getQuestion(id: number): Observable<Question> {
     return this.http.get<Question>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/question/question/' + id + '/');
-}
-  constructor(private http: HttpClient) {
   }
-
 }

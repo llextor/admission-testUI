@@ -19,6 +19,15 @@ export class QuestionComponent implements OnInit {
               private categoryService: CategoryService) {
   }
 
+  ngOnInit() {
+    this.categoryService.getCategories()
+      .subscribe(data => {
+        this.categories = data as Category[];
+        this.selectedCategory = this.categories[0];
+        this.showQuestions(this.selectedCategory.id);
+      });
+  }
+
   showQuestions(id: number) {
     this.questionsService.getAllQuestions(id)
       .subscribe(data => {
@@ -36,13 +45,5 @@ export class QuestionComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.categoryService.getCategories()
-      .subscribe(data => {
-        this.categories = data as Category[];
-        this.selectedCategory = this.categories[0];
-        this.showQuestions(this.selectedCategory.id);
-      });
-  }
 
 }

@@ -24,6 +24,8 @@ import {EditQuestionService} from './edit-question/edit-question.service';
 import { PropitiesComponent } from './propities/propities.component';
 import { ChangeQuestionComponent } from './change-question/change-question.component';
 import {ChangeQuestionService} from './change-question/change-question.service';
+import { TestComponent } from './test/test.component';
+import {TestService} from './test/test.service';
 
 
 @NgModule({
@@ -42,6 +44,7 @@ import {ChangeQuestionService} from './change-question/change-question.service';
     EditQuestionComponent,
     PropitiesComponent,
     ChangeQuestionComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import {ChangeQuestionService} from './change-question/change-question.service';
     QuestionsService,
     CategoryService,
     EditQuestionService,
-    ChangeQuestionService
+    ChangeQuestionService,
+    TestService
   ],
   bootstrap: [AppComponent]
 })

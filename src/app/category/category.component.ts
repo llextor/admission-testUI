@@ -13,6 +13,9 @@ export class CategoryComponent implements OnInit {
   nameOfCategory: string;
   clickNewCategory: boolean;
 
+  ngOnInit() {
+    this.getListOfCategories();
+  }
   constructor(private categoryService: CategoryService) {
   }
 
@@ -47,9 +50,4 @@ export class CategoryComponent implements OnInit {
   getListOfCategories() {
     this.categoryService.getCategories().subscribe(data => this.categories = data as Category[]);
   }
-
-  ngOnInit() {
-    this.getListOfCategories();
-  }
-
 }

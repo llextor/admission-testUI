@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {User} from '../../entities/user';
@@ -11,10 +11,13 @@ import {User} from '../../entities/user';
 export class SignUpComponent implements OnInit {
   user: User;
   form: FormGroup;
+
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-  ) { }
+  ) {
+  }
+
   ngOnInit() {
     this.form = this.formBuilder.group({
       name: new FormControl('', [
@@ -32,6 +35,7 @@ export class SignUpComponent implements OnInit {
       ]),
     });
   }
+
   signUp() {
     this.authService.signUp(this.form);
   }

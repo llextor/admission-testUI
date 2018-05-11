@@ -16,6 +16,10 @@ export class EditQuestionService {
     answerStr: null
   };
 
+  constructor(private http: HttpClient,
+              private routes: Router) {
+  }
+
   addAnswers(idQuestion: number, form: FormGroup) {
     this.answer.correct = true;
     this.answer.answerStr = form.get('trueAnswer').value;
@@ -52,9 +56,5 @@ export class EditQuestionService {
     }, () => {
       console.log('Creation question error');
     });
-  }
-
-  constructor(private http: HttpClient,
-              private routes: Router) {
   }
 }
