@@ -21,7 +21,6 @@ import {QuestionsService} from './question/questions.service';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
 import {CategoryService} from './category/category.service';
 import {EditQuestionService} from './edit-question/edit-question.service';
-import { PropitiesComponent } from './propities/propities.component';
 import { ChangeQuestionComponent } from './change-question/change-question.component';
 import {ChangeQuestionService} from './change-question/change-question.service';
 import { TestComponent } from './test/test.component';
@@ -42,7 +41,6 @@ import {TestService} from './test/test.service';
     CategoryComponent,
     QuestionComponent,
     EditQuestionComponent,
-    PropitiesComponent,
     ChangeQuestionComponent,
     TestComponent,
   ],
