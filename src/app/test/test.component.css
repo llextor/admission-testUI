@@ -8,11 +8,39 @@
   margin: 0 auto;
   margin-top: 25px;
   border-radius: 5px;
-  height: 90vh;
-  opacity: 0.9;
+  padding: 10px;
 
 }
 h2 {
-  padding: 10px;
+
 }
 
+ul li {
+  list-style: none;
+  margin: 7px;
+
+}
+ol li {
+  margin-bottom: 15px;
+
+}
+ol li span {
+  font-weight: bolder;
+}
+button {
+  display: block;
+  font-size: 14px;
+  width:20%;
+  height: 40px;
+  background-color: #dc4955;
+  border: 0;
+  border-radius: 2px;
+  color: #fafafa;
+  margin: 10px auto;
+}
+#timer {
+  position: fixed;
+  right: 20px;
+  color: white;
+  font-size: 20px;
+}

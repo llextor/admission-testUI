@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TestService} from '../test/test.service';
 
 @Component({
   selector: 'app-pre-test',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreTestComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private testService: TestService) { }
 
   ngOnInit() {
   }

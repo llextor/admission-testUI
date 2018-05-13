@@ -1,4 +1,12 @@
-<div id="wrapper" (click)="getTest()" >
-  <h2>Test  {{ticks%60}} sec</h2>
-
+<div id="timer">{{(ticks - (ticks%60))/60}} min {{ticks%60}} sec</div>
+<div id="wrapper" >
+  <h2>Test </h2>
+  <ol>
+  <li *ngFor="let question of questions" ><span>{{question}}</span>
+      <ul>
+      <li *ngFor="let answer of testService.getAnswers(question)" > <input  name="{{question}}" value="{{answer.id}}" type="radio"  >{{answer.answerStr }}</li>
+      </ul>
+ </li>
+  </ol>
+  <button type="submit" >Send answers</button>
 </div>

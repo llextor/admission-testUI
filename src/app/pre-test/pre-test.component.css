@@ -8,11 +8,26 @@
   margin: 0 auto;
   margin-top: 25px;
   border-radius: 5px;
-  height: 90vh;
-  opacity: 0.9;
+
+  padding: 15px;
 
 }
 h2 {
-  padding: 10px;
+
 }
 
+button {
+  display: block;
+  font-size: 14px;
+  width:20%;
+  height: 40px;
+  background-color: #dc4955;
+  border: 0;
+  border-radius: 2px;
+  color: #fafafa;
+  margin: 10px auto;
+}
+p {
+  text-indent: 15px;
+  font-size: 18px;
+}
