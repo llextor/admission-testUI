@@ -14,7 +14,7 @@ export class TestService {
   }
   getAnswers(question: string): Answer[] {
       this.iterator = 0;
-      console.log(this.selectedAnswers);
+      this.selectedAnswers = [];
       for (let i = 0; i < Object.values(this.answers).length; i++) {
         if (this.answers[i].question.questionStr === question) {
           this.selectedAnswers[this.iterator] = this.answers[i];
@@ -24,6 +24,7 @@ export class TestService {
       return this.selectedAnswers;
   }
   getTest() {
+      this.mySet.clear();
     return this.http.get<Answer[]>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/answer/test/answers/').subscribe(data => {
       this.answers = data;
       for (let i = 0; i < Object.values(this.answers).length; i++) {

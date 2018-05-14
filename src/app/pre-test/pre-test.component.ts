@@ -8,7 +8,9 @@ import {TestService} from '../test/test.service';
 })
 export class PreTestComponent implements OnInit {
 
-
+  getTest() {
+    this.testService.getTest();
+  }
   constructor(private testService: TestService) { }
 
   ngOnInit() {

@@ -1,27 +1,34 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {TestService} from './test.service';
 import {Question} from '../entities/question';
 import {Answer} from '../entities/answer';
-import {Observable} from 'rxjs/Rx';
+import {Router} from '@angular/router';
+
+
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  answers: Answer[];
   questions = new Set();
-  ticks = 0;
-
-  constructor(public testService: TestService) {
-  }
+  private timer: number;
 
   ngOnInit() {
-    this.testService.getTest();
     this.questions = this.testService.mySet;
-    const timer = Observable.timer(2000, 1000);
-    timer.subscribe(t => this.ticks = t);
-
-
+    this.timeout();
+  }
+  constructor(public testService: TestService,
+              private routes: Router) {
+  }
+  timeout() { // data неизвестно как работает
+    setTimeout((data) => {
+      alert('Time is over, your answers are saved.');
+      clearTimeout(data);
+      this.routes.navigate(['/result']);
+    }, 40000);
+  }
+  finishTest() {
+    this.routes.navigate(['/result']);
   }
 }
