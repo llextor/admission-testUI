@@ -11,7 +11,7 @@ export class PreTestComponent implements OnInit {
   getTest() {
     this.testService.getTest();
   }
-  constructor(private testService: TestService) { }
+  constructor(public testService: TestService) { }
 
   ngOnInit() {
   }
