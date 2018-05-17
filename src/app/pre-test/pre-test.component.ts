@@ -9,13 +9,14 @@ import {TestService} from '../test/test.service';
 export class PreTestComponent implements OnInit {
 
 
+
   getTest() {
     this.testService.getTest();
   }
   constructor(public testService: TestService) { }
 
   ngOnInit() {
-    this.testService.getResult(+localStorage.getItem('currenUser'));
+    this.testService.getResult();
   }
 
 }

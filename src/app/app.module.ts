@@ -25,7 +25,6 @@ import { ChangeQuestionComponent } from './change-question/change-question.compo
 import {ChangeQuestionService} from './change-question/change-question.service';
 import { TestComponent } from './test/test.component';
 import {TestService} from './test/test.service';
-import { ResultComponent } from './result/result.component';
 
 
 @NgModule({
@@ -44,7 +43,6 @@ import { ResultComponent } from './result/result.component';
     EditQuestionComponent,
     ChangeQuestionComponent,
     TestComponent,
-    ResultComponent,
   ],
   imports: [
     BrowserModule,

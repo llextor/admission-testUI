@@ -1,8 +1,10 @@
 <div id="wrapper">
   <h2>Begin test</h2>
-  <div *ngIf="!testService.result">
-  <p> Once the test is started, you will have a defined period of time to answer the questions on the test. If you do not complete the exam within the 15-minuets window, it will expire. </p>
-  <button routerLink="/test" (click)="getTest()">Begin test</button>
+  
+  <div *ngIf="!testService.resultTest">
+    <p> Once the test is started, you will have a defined period of time to answer the questions on the test. If you do not complete the exam within the 15-minuets window, it will expire. </p>
+    <button routerLink="/test" (click)="getTest()">Begin test</button>
   </div>
-  <div *ngIf="testService.result">Вы прошли тестирование. Ваш балл {{testService.result}}.</div>
+  <div *ngIf="testService.resultTest"><p>Поздравляем! Вы прошли тестирование. Ваш балл {{testService.resultTest}}.</p></div>
+
 </div>

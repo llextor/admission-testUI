@@ -35,7 +35,7 @@ export class TestComponent implements OnInit {
   finishTest() {
     clearTimeout(this.timeVar);
     this.testService.finishTest(this.maps.values());
-    this.routes.navigate(['/result']);
+    this.routes.navigate(['/pre-test']);
   }
   addAnswer(selectedAnswer: Answer) {
 

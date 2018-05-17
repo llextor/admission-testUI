@@ -1,6 +1,6 @@
-import {Answer} from './answer';
+import {User} from './user';
 
 export interface Result {
-  id: number;
-  answers: Answer[];
+  correctAnswers: number;
+  user: User;
 }

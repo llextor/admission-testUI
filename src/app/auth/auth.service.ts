@@ -32,7 +32,7 @@ export class AuthService {
       .subscribe(user => {
         this.currentUser = user[0];
         console.log('SIGNIN OK ' + this.currentUser.name);
-        localStorage.setItem('currentUser', user[0].id);
+        localStorage.setItem('currentUser', JSON.stringify(user[0]));
         // навигация в зависимости от роли, полученной с бекенда
         if (this.currentUser.role.name === 'user') {
           this.routes.navigate(['pre-test']);
