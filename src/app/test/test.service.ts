@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Answer} from '../entities/answer';
-import {Question} from '../entities/question';
-import {Observable} from 'rxjs/Observable';
+import {Result} from '../entities/result';
 
 @Injectable()
 export class TestService {
@@ -15,8 +14,11 @@ export class TestService {
   }
   finishTest(selectedAnswers: any) {
       const res = Array.from(selectedAnswers) as Answer[];
-      console.log(JSON.stringify(Array.from(selectedAnswers)));
-      return this.http.post('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/answer/check/', res)
+    const result: Result = {
+      id: +localStorage.getItem('currentUser'),
+      answers: res
+  };
+      this.http.post('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/answer/check/', res)
         .subscribe((data) => this.result = data.valueOf().toString());
   }
   getAnswers(question: string): Answer[] {
@@ -32,12 +34,15 @@ export class TestService {
   }
   getTest() {
       this.mySet.clear();
-    return this.http.get<Answer[]>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/answer/test/answers/').subscribe(data => {
+      this.http.get<Answer[]>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/answer/test/answers/')
+        .subscribe(data => {
       this.answers = data;
       for (let i = 0; i < Object.values(this.answers).length; i++) {
         this.mySet.add(this.answers[i].question.questionStr);
       }
     });
+  }
+  getResult(id: number) {
   }
 }
 

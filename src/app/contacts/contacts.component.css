@@ -1,6 +1,5 @@
 * {
   font-family: 'HelveticaNeueCyr', sans-serif;
-
 }
 #wrapper {
   width: 80%;
@@ -8,13 +7,10 @@
   margin: 0 auto;
   margin-top: 25px;
   border-radius: 5px;
-  height: 90vh;
-  opacity: 0.9;
-
-
+  padding: 10px;
 }
 h2 {
-  padding: 10px;
+  padding-left: 15px;
 }
 p {
   line-height: 25px;

@@ -1,6 +1,5 @@
 * {
   font-family: 'HelveticaNeueCyr', sans-serif;
-
 }
 
 #wrapper {
@@ -10,7 +9,6 @@
   margin-top: 25px;
   border-radius: 5px;
   height: 100%;
-
 }
 
 h2 {
@@ -19,13 +17,21 @@ h2 {
 
 a {
   text-decoration: none;
-}
+  color:black;
 
+}
+a:visited {
+  color:black;
+}
+a:hover {
+  color: #dc4955;
+}
 ol {
   padding: 0;
 }
 
 li {
+  color: #111111;
   text-decoration: none;
   margin-bottom: 20px;
   font-size: 18px;
@@ -60,16 +66,13 @@ button {
 }
 
 #deletePic{
-
   background: url("../category/1493279-20.png") no-repeat;
   cursor: pointer;
   border: none;
   margin-right: 10px;
   display: block;
-
   width: 20px;
   height: 20px;
-
   float: left;
-
 }
+
