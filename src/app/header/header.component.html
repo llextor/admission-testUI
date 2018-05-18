@@ -6,6 +6,7 @@
     <li *ngIf="authService.currentUser.role.name==='user'"><a id="test" routerLink="/pre-test" routerLinkActive="active">Testing</a></li>
     <li *ngIf="authService.currentUser.role.name==='admin'"><a id="category" routerLink="/categories" routerLinkActive="active">Categories</a></li>
     <li *ngIf="authService.currentUser.role.name==='admin'"><a id="question" routerLink="/questions" routerLinkActive="active">Questions</a></li>
+    <li *ngIf="authService.currentUser.role.name==='admin'"><a id="report" routerLink="/otchet" routerLinkActive="active">Report</a></li>
     <li *ngIf="authService.currentUser.role.name!==null" (click)="authService.logOut()">
      <a id="signout" routerLink="/signin" routerLinkActive="active"><span >Log out : {{authService.currentUser.name}}</span> </a></li>
     <li *ngIf="authService.currentUser.role.name===null"><a id="signin" routerLink="/signin" routerLinkActive="active">Sign In</a></li>

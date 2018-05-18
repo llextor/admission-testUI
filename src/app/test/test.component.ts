@@ -1,9 +1,7 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TestService} from './test.service';
-import {Question} from '../entities/question';
 import {Answer} from '../entities/answer';
 import {Router} from '@angular/router';
-import {tick} from '@angular/core/testing';
 import {Observable} from 'rxjs/Rx';
 
 @Component({
@@ -38,8 +36,6 @@ export class TestComponent implements OnInit {
     this.routes.navigate(['/pre-test']);
   }
   addAnswer(selectedAnswer: Answer) {
-
     this.maps.set(selectedAnswer.question.id, selectedAnswer);
-    console.log(selectedAnswer);
   }
 }

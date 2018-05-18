@@ -3,13 +3,13 @@ import {HttpClient} from '@angular/common/http';
 import {Answer} from '../entities/answer';
 import {Result} from '../entities/result';
 import {User} from '../entities/user';
-import {l} from '@angular/core/src/render3';
 
 @Injectable()
 export class TestService {
   mySet = new Set();
   answers: Answer[];
   selectedAnswers: Answer[] = [];
+  results: Result[];
   iterator = 0;
   resultTest: number = null;
     constructor(private http: HttpClient) {
@@ -49,10 +49,12 @@ export class TestService {
   }
   getResult() {
       const currentUser = JSON.parse(localStorage.getItem('currentUser')) as User;
-    console.log(currentUser.name);
       this.http.get<Result>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/results/result/' + currentUser.name + '/')
         .subscribe(data => this.resultTest = data.correctAnswers,
           () => this.resultTest = null);
+  }
+  getAllResults() {
+      return this.http.get<Result[]>('http://167.99.206.63:8080/admission-test-0.0.1-SNAPSHOT/results/');
   }
 }
 

@@ -11,6 +11,7 @@ import {QuestionComponent} from './question/question.component';
 import {EditQuestionComponent} from './edit-question/edit-question.component';
 import {ChangeQuestionComponent} from './change-question/change-question.component';
 import {TestComponent} from './test/test.component';
+import {OtchetComponent} from './otchet/otchet.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
     redirectTo: '/about',
     pathMatch: 'full'
   },
+  {path: 'otchet', component: OtchetComponent},
   {path: 'test', component: TestComponent},
   {path: 'changeQuestion/:id', component: ChangeQuestionComponent},
   {path: 'editQuestion', component: EditQuestionComponent},

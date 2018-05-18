@@ -1,0 +1,10 @@
+<div id="wrapper">
+  <h2>Results</h2>
+  <ul>
+    <li *ngFor="let result of results">
+      {{result.user.name}} - {{result.user.email}} - {{result.correctAnswers}} points
+    </li>
+  </ul>
+
+
+</div>
